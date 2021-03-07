@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 /* ! div#wrapper */
@@ -49,12 +50,17 @@ nav li {
   font-weight: bold;
 }
 
+nav ul:hover * {
+  filter: blur(5px);
+}
 nav li:hover {
+  filter: blur(0);
   color: white;
   text-shadow: 0px 0px 0.5vw black;
   transform: scale(1.2, 1.2);
   cursor: pointer;
 }
+
 .tran {
   transition-duration: 1s;
   transition-timing-function: ease;
@@ -68,6 +74,7 @@ section {
   border: 2px solid red;
   /* 모든세션 display none */
   display: none;
+  overflow: hidden;
 }
 
 /* main 세션만 display block */
@@ -86,18 +93,88 @@ section {
   padding: 0;
   margin: 0;
 }
-#contactDiv {
+
+/* 호버기능 제어 최상단div */
+#contactHover {
   background-color: black;
+  position: absolute;
+  left: 9%;
+  top: 11vh;
+  width: 82%;
+  height: 78vh;
+  opacity: 0;
+  z-index: 10;
+}
+/* 정보Div */
+#contactDiv {
+  /* background-color: black; */
   position: absolute;
   left: 50%;
   top: 11vh;
   width: 25%;
   height: 78vh;
-  opacity: 0.7;
-  color: hotpink;
+  /* opacity: 0.7; */
+  color: white;
   padding-left: 10vh;
   font-size: 4vh;
   font-weight: bold;
+  z-index: 9;
+  transform: scale(0, 0);
+  text-shadow: 1px 1px 10px black;
+}
+#contactDiv-title {
+  font-size: 6vh;
+}
+
+/* Hover 알림 div */
+#Hover {
+  background-color: black;
+  position: absolute;
+  left: 40%;
+  top: 35vh;
+  width: 20%;
+  height: 25vh;
+  opacity: 0.7;
+  color: white;
+  font-size: 4vh;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25vh;
+  border-radius: 50%;
+  z-index: 9;
+  transform: scale(1, 1);
+}
+
+/* 호버기능 구현 */
+#contactHover:hover ~ #contactDiv,
+#contactDiv:hover {
+  transform: scale(1, 1);
+  z-index: 11;
+}
+#contactHover:hover ~ #Hover,
+#contactDiv:hover + #Hover {
+  transform: scale(0, 0);
+}
+
+/* 트랜지션 설정 */
+.contactTran {
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+/* 전화번호클릭시 전화기능 구현 상태4가지표시 */
+a[href="tel:010-6353-4583"]:link {
+  color: white;
+  text-decoration: none;
+}
+a[href="tel:010-6353-4583"]:visited {
+  color: white;
+}
+a[href="tel:010-6353-4583"]:hover {
+  text-decoration: underline;
+}
+a[href="tel:010-6353-4583"]:active {
+  color: tomato;
 }
 
 /* ! footer부분 */
