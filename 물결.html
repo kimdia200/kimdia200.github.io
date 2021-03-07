@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <footer>
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div>
+    </footer>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      footer {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        /* background: #000; */
+        overflow: hidden;
+      }
+
+      footer .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 198px;
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg");
+        background-size: 1600px 198px;
+      }
+
+      footer .wave.wave1 {
+        animation: animate-wave-1 10s linear infinite;
+        z-index: 1000;
+        opacity: 1;
+        animation-delay: 0s;
+        bottom: 0;
+      }
+
+      footer .wave.wave2 {
+        animation: animate-wave-2 5s linear infinite;
+        z-index: 999;
+        opacity: 0.5;
+        animation-delay: -5s;
+        bottom: 10px;
+      }
+
+      footer .wave.wave3 {
+        animation: animate-wave-3 10s linear infinite;
+        z-index: 998;
+        opacity: 0.2;
+        animation-delay: -2s;
+        bottom: 15px;
+      }
+
+      footer .wave.wave4 {
+        animation: animate-wave-4 10s linear infinite;
+        z-index: 997;
+        opacity: 0.7;
+        animation-delay: -5s;
+        bottom: 20px;
+      }
+
+      @keyframes animate-wave-1 {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: 1600px;
+        }
+      }
+      @keyframes animate-wave-2 {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: -1600px;
+        }
+      }
+      @keyframes animate-wave-3 {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: 1600px;
+        }
+      }
+      @keyframes animate-wave-4 {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: -1600px;
+        }
+      }
+    </style>
+  </body>
+</html>
