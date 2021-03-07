@@ -75,6 +75,7 @@ section {
   /* 모든세션 display none */
   display: none;
   overflow: hidden;
+  position: relative;
 }
 
 /* main 세션만 display block */
@@ -83,11 +84,12 @@ section {
   display: block;
 }
 
+/* ! Contact 세션 */
 /* contact video */
 #contactVideo {
   position: absolute;
   left: 1vh;
-  top: 11vh;
+  top: 0vh;
   width: 99%;
   height: 78vh;
   padding: 0;
@@ -99,7 +101,7 @@ section {
   background-color: black;
   position: absolute;
   left: 9%;
-  top: 11vh;
+  top: 0vh;
   width: 82%;
   height: 78vh;
   opacity: 0;
@@ -110,7 +112,7 @@ section {
   /* background-color: black; */
   position: absolute;
   left: 50%;
-  top: 11vh;
+  top: 0vh;
   width: 25%;
   height: 78vh;
   /* opacity: 0.7; */
@@ -122,16 +124,13 @@ section {
   transform: scale(0, 0);
   text-shadow: 1px 1px 10px black;
 }
-#contactDiv-title {
-  font-size: 6vh;
-}
 
 /* Hover 알림 div */
 #Hover {
   background-color: black;
   position: absolute;
   left: 40%;
-  top: 35vh;
+  top: 25vh;
   width: 20%;
   height: 25vh;
   opacity: 0.7;
@@ -162,6 +161,37 @@ section {
   transition-timing-function: ease;
 }
 
+#contactDiv-title {
+  position: relative;
+  font-size: 6vh;
+  -webkit-text-stroke: 0.3vh black;
+}
+#contactDiv-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: darkorchid;
+  -webkit-text-stroke: 0vw black;
+  border-right: 0.4vh solid darkorchid;
+  overflow: hidden;
+  animation: aniName 4s linear infinite;
+}
+
+@keyframes aniName {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
 /* 전화번호클릭시 전화기능 구현 상태4가지표시 */
 a[href="tel:010-6353-4583"]:link {
   color: white;
@@ -177,10 +207,67 @@ a[href="tel:010-6353-4583"]:active {
   color: tomato;
 }
 
+/* SNS아이콘 설정 */
+#socialList {
+  clear: both;
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  text-shadow: none;
+}
+.sns {
+  position: relative;
+  margin: 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.sns a {
+  text-decoration: none;
+}
+.sns a .fa {
+  font-size: 4vh;
+  color: #000;
+}
+.sns::before {
+  font-family: fontAwesome;
+  position: absolute;
+  top: 0.8vh;
+  left: 0;
+  font-size: 4vh;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.sns:nth-child(1)::before {
+  content: "\f16d";
+  color: rgb(226, 77, 134);
+  border-bottom: 4px solid rgb(226, 77, 134);
+}
+.sns:nth-child(2)::before {
+  content: "\f27a";
+  color: yellow;
+  border-bottom: 4px solid yellow;
+}
+.sns:nth-child(3)::before {
+  content: "\f143";
+  color: rgb(255, 157, 0);
+  border-bottom: 4px solid rgb(255, 157, 0);
+}
+.sns:nth-child(4)::before {
+  content: "\f09b";
+  color: gray;
+  border-bottom: 4px solid gray;
+}
+.sns:hover::before {
+  height: 0%;
+}
+
 /* ! footer부분 */
 footer {
   width: 100%;
   height: 10vh;
   border: 2px solid black;
   overflow: hidden;
+  position: relative;
 }

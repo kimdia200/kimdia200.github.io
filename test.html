@@ -3,86 +3,76 @@
   <head>
     <title>Just For Fun 2</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div class="container"></div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript">
-      for (var i = 1; i <= 2500; i++) {
-        $(".container").append('<div class="box"></div>');
-      }
-    </script>
+    <ul id="socialList">
+      <li class="sns">
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </li>
+      <li class="sns">
+        <a href="#"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+      </li>
+      <li class="sns">
+        <a href="#"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+      </li>
+    </ul>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
+      #socialList {
+        position: relative;
+        display: flex;
+        list-style-type: none;
       }
-      .container {
-        width: 100vw;
+      .sns {
+        position: relative;
+        margin: 0 20px;
+        cursor: pointer;
+      }
+      .sns a {
+        text-decoration: none;
+      }
+      .sns a .fa {
+        font-size: 6em;
+        color: #000;
+      }
+      .sns::before {
+        font-family: fontAwesome;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 6em;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+      }
+      .sns:nth-child(1)::before {
+        content: "\f16d";
+        color: rgb(226, 77, 134);
+        border-bottom: 4px solid rgb(226, 77, 134);
+      }
+      .sns:hover::before {
         height: 100%;
-        overflow: hidden;
-        background: #111;
       }
-      .container .box {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        background: #111;
-        float: left;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        box-sizing: border-box;
-        overflow: hidden;
+      .sns:nth-child(2)::before {
+        content: "\f27a";
+        color: yellow;
+        border-bottom: 4px solid yellow;
       }
-      .container .box:before {
-        content: "";
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        bottom: 6px;
-        right: 6px;
-        background: #1d1d1d;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 1);
-        transition: 5s ease-in-out;
+      .sns:hover::before {
+        height: 100%;
       }
-      .container .box:hover:before {
-        transition: 0s ease-in-out;
+      .sns:nth-child(3)::before {
+        content: "\f143";
+        color: rgb(255, 157, 0);
+        border-bottom: 4px solid rgb(255, 157, 0);
       }
-      .container .box:nth-child(9n + 1):hover:before {
-        background: #f00;
-        transition: 0s ease-in-out;
-        box-shadow: 0 0 3px #f00, 0 0 10px #f00;
-      }
-      .container .box:nth-child(9n + 2):hover:before {
-        background: #0f0;
-        box-shadow: 0 0 3px #0f0, 0 0 10px #0f0;
-      }
-      .container .box:nth-child(9n + 3):hover:before {
-        background: #00f;
-        box-shadow: 0 0 3px #00f, 0 0 10px #00f;
-      }
-      .container .box:nth-child(9n + 4):hover:before {
-        background: #ff0;
-        box-shadow: 0 0 3px #ff0, 0 0 10px #ff0;
-      }
-      .container .box:nth-child(9n + 5):hover:before {
-        background: #0ff;
-        box-shadow: 0 0 3px #0ff, 0 0 10px #0ff;
-      }
-      .container .box:nth-child(9n + 6):hover:before {
-        background: #f0f;
-        box-shadow: 0 0 3px #f0f, 0 0 10px #f0f;
-      }
-      .container .box:nth-child(9n + 7):hover:before {
-        background: #e91e63;
-        box-shadow: 0 0 3px #e91e63, 0 0 10px #e91e63;
-      }
-      .container .box:nth-child(9n + 8):hover:before {
-        background: #00ffad;
-        box-shadow: 0 0 3px #00ffad, 0 0 10px #00ffad;
-      }
-      .container .box:nth-child(9n + 9):hover:before {
-        background: #f45103;
-        box-shadow: 0 0 3px #f45103, 0 0 10px #f45103;
+      .sns:hover::before {
+        height: 100%;
       }
     </style>
   </body>
