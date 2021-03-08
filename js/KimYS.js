@@ -7,7 +7,7 @@ var test1 = function(li) {
     sections[i].style.display = "none";
   }
 
-  //클릭한 값에 따라 세션 창 보여줌
+  //Header부분 클릭한 값에 따라 세션 창 보여줌
   if(li.innerHTML == "Main"){
     content1.style.display = "block";
   }
@@ -21,6 +21,11 @@ var test1 = function(li) {
   }else{
     content5.style.display = "block";
   }
-
+}
+// Intro부분 클릭에 따라 실행됨
+// re버튼 클릭시 창을 다시 띄워줘서 모든 효과가 다시 나오게함
+var click_re = function(){
+  var str = content2.innerHTML;
+  content2.innerHTML = str;
 }
 

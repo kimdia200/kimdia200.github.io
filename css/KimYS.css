@@ -46,7 +46,7 @@ nav li {
   margin-inline-start: 2%;
   margin-inline-end: 2%;
   font-size: 2vw;
-  font-weight: bold;
+  font-family: "Alfa Slab One", cursive;
 }
 
 nav ul:hover * {
@@ -57,6 +57,7 @@ nav li:hover {
   text-shadow: 0px 0px 0.8vw greenyellow;
   transform: scale(1.2, 1.2);
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .tran {
@@ -360,7 +361,7 @@ footer ul li h3 a:active {
 }
 /* 1번째 텍스트 div 애니메이션 딜레이를 두려고 따로설정 */
 #mainDiv div:nth-child(1) {
-  animation-name: mainAni;
+  animation-name: mainAni1;
   animation-delay: 1s;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -369,7 +370,7 @@ footer ul li h3 a:active {
 }
 /* 2번째 텍스트 div 애니메이션 딜레이를 두려고 따로설정 */
 #mainDiv div:nth-child(3) {
-  animation-name: mainAni;
+  animation-name: mainAni2;
   animation-delay: 4s;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -377,9 +378,17 @@ footer ul li h3 a:active {
   animation-fill-mode: both;
 }
 /* 1,2번 텍스트 div에 부여할 애니메이션 효과 */
-@keyframes mainAni {
+@keyframes mainAni1 {
   0% {
-    transform: scale(0, 0);
+    transform: scale(0, 0) translateY(100vh);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes mainAni2 {
+  0% {
+    transform: scale(0, 0) translateY(-100vh);
   }
   100% {
     transform: scale(1, 1);
@@ -421,6 +430,15 @@ footer ul li h3 a:active {
 }
 .glowing span:nth-child(3) {
   --i: 3;
+}
+.glowing span:nth-child(4) {
+  --i: 4;
+}
+.glowing span:nth-child(5) {
+  --i: 5;
+}
+.glowing span:nth-child(5) {
+  --i: 6;
 }
 
 .glowing {
@@ -479,14 +497,17 @@ footer ul li h3 a:active {
     0 0 60px rgba(0, 226, 255, 1), 0 0 80px rgba(0, 226, 255, 1),
     0 0 0 8px rgba(0, 226, 255, 0.1);
 }
-.glowing span:nth-child(3n + 1) {
+.glowing span:nth-child(4n + 1) {
   animation: introAni 10s alternate infinite;
 }
-.glowing span:nth-child(3n + 2) {
+.glowing span:nth-child(4n + 2) {
   animation: introAni-reverse 3s alternate infinite;
 }
-.glowing span:nth-child(3n + 3) {
+.glowing span:nth-child(4n + 3) {
   animation: introAni 8s alternate infinite;
+}
+.glowing span:nth-child(4n + 4) {
+  animation: introAni-reverse 2s alternate infinite;
 }
 @keyframes introAni {
   0% {
@@ -526,11 +547,32 @@ footer ul li h3 a:active {
   width: 20%;
   height: auto;
 }
+/* introduction에서 이름이 들어갈 DIV */
 #introDiv-name {
   position: absolute;
   font-size: 6vw;
-  left: 1vw;
+  font-family: "Alfa Slab One", cursive;
   top: 0;
+  animation-name: name;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* 이름값에 적용해줄 반짝반짝 애니메이션 */
+@keyframes name {
+  0% {
+    text-shadow: 0 0 0vw yellow;
+    transform: scale(0.9, 0.9);
+  }
+  50% {
+    text-shadow: 0 0 3vw yellow;
+    transform: scale(1, 1);
+  }
+  100% {
+    text-shadow: 0 0 0vw yellow;
+    transform: scale(0.9, 0.9);
+  }
 }
 /* 소개 글귀 */
 #introDiv-descript {
@@ -538,5 +580,7 @@ footer ul li h3 a:active {
   font-size: 2vw;
   left: 20vw;
   top: 20vh;
+  width: 60vw;
+  height: 60vh;
   line-height: 4vw;
 }
