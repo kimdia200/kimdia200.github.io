@@ -13,9 +13,10 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Han+Sans&display=swap"
       rel="stylesheet"
     />
+
     <script src="./js/KimYS.js"></script>
     <title>KH-개인프로젝트-김윤수</title>
   </head>
@@ -105,24 +106,28 @@
             </em>
           </div>
           <div id="introDiv_descript1">
-            1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
-            Minus laborum reprehenderit officia atque sequi. <br />
-            Doloremque commodi, aperiam consequatur recusandae,<br />
-            soluta ipsam error sapiente eos delectus accusantium fugit?<br />
-            Adipisci, quia eligendi? <br />
+            <span style="font-size: 3vw">김윤수</span><br />
+            출생 : 1994년 2월 6일, 서울
+            <br />
+            학력 : 성공회대학교(졸)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            전공 :
+            소프트웨어공학&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            거주지 : 경기도
+            부천시&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
           </div>
           <div id="introDiv_descript2">
-            2.Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
-            Minus laborum reprehenderit officia atque sequi. <br />
-            Doloremque commodi, aperiam consequatur recusandae,<br />
-            soluta ipsam error sapiente eos delectus accusantium fugit?<br />
-            Adipisci, quia eligendi? <br />
+            I want to be a good, reliable, hard-working developer.<br />
+            Although I'm still lacking a lot, I'll show you how I grow. <br />
+            I'm recording all the contents I have studied in Notion or
+            Github.<br />
+            If you're curious about growth records,<br />
+            please refer to Contact tab.<br />
           </div>
           <div id="introDiv-btns">
             <br /><br /><br /><br /><br />
-            <input type="button" value="1" onclick="click_1()" />
-            <input type="button" value="2" onclick="click_2()" />
-            <input type="button" value="re" onclick="click_re()" />
+            <input type="button" value="1" id="btn1" onclick="click_1()" />
+            <input type="button" value="2" id="btn2" onclick="click_2()" />
+            <input type="button" value="re" id="btn3" onclick="click_re()" />
           </div>
         </div>
       </section>
@@ -151,11 +156,11 @@
           <br />
           <span id="contactDiv-title" data-text="김윤수">김윤수</span>
           <br /><br />
-          <span>
+          <span id="tel">
             <a href="tel:010-6353-4583">Tel (click)<br />010-6353-4583</a>
           </span>
           <br /><br />
-          <span>E-mail<br />kimdia2000@gmail.com</span><br /><br />
+          <span id="email">E-mail<br />kimdia2000@gmail.com</span><br /><br />
           <span>
             <ul id="socialList">
               <li class="sns">

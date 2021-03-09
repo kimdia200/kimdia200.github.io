@@ -48,13 +48,32 @@ nav li {
   font-size: 2vw;
   font-family: "Alfa Slab One", cursive;
 }
+#li1 {
+  text-shadow: 0px 0px 0.8vw greenyellow;
+  -webkit-text-stroke: 0.05vw yellowgreen;
+}
+#li2 {
+  text-shadow: 0px 0px 0.8vw yellow;
+  -webkit-text-stroke: 0.05vw yellow;
+}
+#li3 {
+  text-shadow: 0px 0px 0.8vw red;
+  -webkit-text-stroke: 0.05vw red;
+}
+#li4 {
+  text-shadow: 0px 0px 0.8vw blue;
+  -webkit-text-stroke: 0.05vw blue;
+}
+#li5 {
+  text-shadow: 0px 0px 0.8vw orange;
+  -webkit-text-stroke: 0.05vw orange;
+}
 
 nav ul:hover * {
   filter: blur(5px);
 }
 nav li:hover {
   filter: blur(0);
-  text-shadow: 0px 0px 0.8vw greenyellow;
   transform: scale(1.2, 1.2);
   cursor: pointer;
   text-decoration: underline;
@@ -118,7 +137,7 @@ section {
   left: 50%;
   top: 55%;
   width: 25%;
-  color: white;
+  color: orange;
   margin-left: 0%;
   margin-top: -20%;
   padding-left: 10vh;
@@ -126,9 +145,15 @@ section {
   font-weight: bold;
   z-index: 9;
   transform: scale(0, 0);
-  text-shadow: 1px 1px 10px black;
 }
-
+#email {
+  font-weight: lighter;
+  font-family: "Black Han Sans", sans-serif;
+  -webkit-text-stroke: 0.1vw white;
+}
+#tel {
+  -webkit-text-stroke: 0.1vw white;
+}
 /* Hover 알림 div */
 #Hover {
   background-color: black;
@@ -168,7 +193,7 @@ section {
 #contactDiv-title {
   position: relative;
   font-size: 3vw;
-  -webkit-text-stroke: 0.1vw black;
+  -webkit-text-stroke: 0.08vw white;
 }
 #contactDiv-title::before {
   content: attr(data-text);
@@ -177,38 +202,55 @@ section {
   left: 0;
   width: 0%;
   height: 100%;
-  color: blanchedalmond;
-  -webkit-text-stroke: 0vw black;
+  color: bisque;
+  background-color: white;
+  -webkit-text-stroke: 0.1vw orange;
   border-right: 0.4vw solid white;
   overflow: hidden;
-  animation: aniName 4s linear infinite;
+  animation: aniName 2s linear infinite;
 }
 
 @keyframes aniName {
-  0%,
-  10%,
-  100% {
+  0% {
     width: 0;
   }
-  70%,
+  10% {
+    width: 0;
+  }
+  70% {
+    width: 100%;
+  }
   90% {
     width: 100%;
+  }
+  100% {
+    width: 0;
   }
 }
 
 /* 전화번호클릭시 전화기능 구현 상태4가지표시 */
 a[href="tel:010-6353-4583"]:link {
-  color: white;
+  color: orange;
+  font-family: "Black Han Sans", sans-serif;
   text-decoration: none;
+  font-weight: lighter;
 }
 a[href="tel:010-6353-4583"]:visited {
-  color: white;
+  font-family: "Black Han Sans", sans-serif;
+  color: orange;
+  font-weight: lighter;
 }
 a[href="tel:010-6353-4583"]:hover {
+  font-family: "Black Han Sans", sans-serif;
   text-decoration: underline;
+  color: white;
+  -webkit-text-stroke: 0.1vw orange;
+  font-weight: lighter;
 }
 a[href="tel:010-6353-4583"]:active {
-  color: tomato;
+  font-family: "Black Han Sans", sans-serif;
+  color: orange;
+  font-weight: lighter;
 }
 
 /* SNS아이콘 설정 */
@@ -246,25 +288,25 @@ a[href="tel:010-6353-4583"]:active {
 .sns:nth-child(1)::before {
   content: "\f16d";
   color: rgb(226, 77, 134);
-  border-bottom: 4px solid rgb(226, 77, 134);
+  border-bottom: 0.2vw solid rgb(226, 77, 134);
 }
 .sns:nth-child(2)::before {
   content: "\f27a";
   color: yellow;
-  border-bottom: 4px solid yellow;
+  border-bottom: 0.2vw solid yellow;
 }
 .sns:nth-child(3)::before {
   content: "\f143";
   color: rgb(255, 157, 0);
-  border-bottom: 4px solid rgb(255, 157, 0);
+  border-bottom: 0.2vw solid rgb(255, 157, 0);
 }
 .sns:nth-child(4)::before {
   content: "\f09b";
   color: gray;
-  border-bottom: 4px solid gray;
+  border-bottom: 0.2vw solid gray;
 }
 .sns:hover::before {
-  height: 0%;
+  height: 0;
 }
 
 /* ! footer부분 */
@@ -353,6 +395,7 @@ footer ul li a:active {
 #mainDiv > div {
   font-size: 7vw;
   font-weight: bold;
+  -webkit-text-stroke: 0.1vw greenyellow;
   text-shadow: 0px 0px 1vw greenyellow;
   transition-duration: 1s;
 }
@@ -415,9 +458,6 @@ footer ul li a:active {
 /* ! Introduction 세션 */
 #content2 {
   margin: 0;
-  padding: 0;
-  /* 보더값 없애야됨 */
-  /* border: 1px solid red; */
   position: relative;
 }
 
@@ -560,7 +600,7 @@ footer ul li a:active {
 #introDiv img {
   position: absolute;
   right: -1vw;
-  bottom: 0;
+  bottom: -0.9vh;
   width: 20%;
   height: auto;
 }
@@ -574,6 +614,7 @@ footer ul li a:active {
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  -webkit-text-stroke: 0.1vw yellow;
 }
 
 /* 이름값에 적용해줄 반짝반짝 애니메이션 */
@@ -603,25 +644,32 @@ footer ul li a:active {
   width: 100%;
   height: 60%;
   line-height: 4vw;
+  text-shadow: 0 0 1vw yellow;
+  font-family: "Black Han Sans", sans-serif;
+}
+
+introDiv_descript1 span {
 }
 
 #introDiv_descript1 {
   animation-name: descript1;
-  animation-duration: 10s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
+
 @keyframes descript1 {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0%) scale(0.8, 0.8);
   }
-  80% {
+  75% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.8, 0.8) rotate(-720deg);
   }
 }
+/* 3초진행 1초 움직임 */
 
 #introDiv_descript2 {
   animation-name: descript2;
@@ -629,19 +677,24 @@ footer ul li a:active {
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
+/* 3초대기 1초 움직임 3초 진행 */
 @keyframes descript2 {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0.8, 0.8);
   }
-  80% {
-    transform: translateX(100%);
+  30% {
+    transform: translateX(100%) scale(0.8, 0.8);
   }
+  40% {
+    transform: translateX(0%) scale(0.8, 0.8) rotate(-720deg);
+  }
+  70%,
   100% {
-    transform: translateX(0%);
+    transform: scale(1, 1);
   }
 }
 
-/* 버튼1 눌렸을때 */
+/* 버튼1,2 눌렸을때 */
 @keyframes move {
   0% {
     transform: translateX(0%);
@@ -649,7 +702,26 @@ footer ul li a:active {
   1% {
     transform: translateX(100%);
   }
-  100% {
-    transform: translateX(100%);
-  }
+}
+
+#introDiv-btns input {
+  padding: 0;
+  font-size: 1vw;
+  width: 2vw;
+  height: 2vw;
+  text-align: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border-color: yellow;
+  border-width: 0.3vw;
+  font-family: "Alfa Slab One", cursive;
+}
+#introDiv-btns input:hover {
+  cursor: pointer;
+}
+#btn1:hover,
+#btn2:hover,
+#btn3:hover {
+  transform: scale(1.2, 1.2);
 }
