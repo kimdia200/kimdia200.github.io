@@ -279,7 +279,7 @@ footer ul {
   left: 0;
   bottom: 2vh;
   list-style: none;
-  font-size: 1vw;
+  font-size: 1.5vw;
   padding-left: 1vw;
   margin: 0;
 }
@@ -288,21 +288,18 @@ footer ul li {
   margin-right: 1vw;
   position: relative;
 }
-footer ul li h3 {
-  margin: 0;
-}
 
-footer ul li h3 a:link {
+footer ul li a:link {
   color: unset;
   text-decoration: none;
 }
-footer ul li h3 a:visited {
+footer ul li a:visited {
   color: unset;
 }
-footer ul li h3 a:hover {
+footer ul li a:hover {
   text-decoration: underline;
 }
-footer ul li h3 a:active {
+footer ul li a:active {
   color: tomato;
 }
 
@@ -323,15 +320,17 @@ footer ul li h3 a:active {
 /* video담는 div */
 #mainVideo {
   position: absolute;
-  top: -20vh;
+  top: 0vh;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 78vh;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 /* 비디오부분 */
 #mainVideo video {
+  position: absolute;
+  top: -20vh;
   width: 100%;
   height: auto;
 }
@@ -346,21 +345,20 @@ footer ul li h3 a:active {
   width: 99%;
   height: 77vh;
   overflow: hidden;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
 }
 
 /* 텍스트가 들어갈 div */
 #mainDiv > div {
-  margin-top: 4.5vh;
   font-size: 7vw;
   font-weight: bold;
   text-shadow: 0px 0px 1vw greenyellow;
-
   transition-duration: 1s;
 }
 /* 1번째 텍스트 div 애니메이션 딜레이를 두려고 따로설정 */
 #mainDiv div:nth-child(1) {
+  margin-top: 4.5vh;
   animation-name: mainAni1;
   animation-delay: 1s;
   animation-duration: 3s;
@@ -369,7 +367,8 @@ footer ul li h3 a:active {
   animation-fill-mode: both;
 }
 /* 2번째 텍스트 div 애니메이션 딜레이를 두려고 따로설정 */
-#mainDiv div:nth-child(3) {
+#mainDiv div:nth-child(2) {
+  margin-top: 28vh;
   animation-name: mainAni2;
   animation-delay: 4s;
   animation-duration: 3s;
@@ -393,6 +392,24 @@ footer ul li h3 a:active {
   100% {
     transform: scale(1, 1);
   }
+}
+/* 가로세로 비율 깨질시 안내문 */
+#warn {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  color: red;
+  font-size: 3vh;
+  z-index: 1;
+}
+#subVideo {
+  position: absolute;
+  top: 0vh;
+  left: -145%;
+  height: 78vh;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* ! Introduction 세션 */
@@ -574,13 +591,65 @@ footer ul li h3 a:active {
     transform: scale(0.9, 0.9);
   }
 }
+
 /* 소개 글귀 */
-#introDiv-descript {
+#introDiv_descript1,
+#introDiv_descript2,
+#introDiv-btns {
   position: absolute;
   font-size: 2vw;
-  left: 20vw;
-  top: 20vh;
-  width: 60vw;
-  height: 60vh;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  height: 60%;
   line-height: 4vw;
+}
+
+#introDiv_descript1 {
+  animation-name: descript1;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes descript1 {
+  0% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#introDiv_descript2 {
+  animation-name: descript2;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes descript2 {
+  0% {
+    transform: translateX(100%);
+  }
+  80% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* 버튼1 눌렸을때 */
+@keyframes move {
+  0% {
+    transform: translateX(0%);
+  }
+  1% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

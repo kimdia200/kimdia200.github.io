@@ -29,7 +29,7 @@
             <li id="li1" class="tran" onclick="test1(this)">Main</li>
             <li id="li2" class="tran" onclick="test1(this)">Introduction</li>
             <li id="li3" class="tran" onclick="test1(this)">Interests</li>
-            <li id="li4" class="tran" onclick="test1(this)">BluePrint</li>
+            <li id="li4" class="tran" onclick="test1(this)">Roadmap</li>
             <li id="li5" class="tran" onclick="test1(this)">Contact</li>
           </ul>
         </nav>
@@ -41,10 +41,17 @@
         <div id="mainVideo">
           <video src="./videos/main.mp4" autoplay loop muted></video>
         </div>
+        <div id="subVideo">
+          <video src="./videos/main.mp4" autoplay loop muted></video>
+        </div>
         <div id="mainDiv">
           <div>Alone Project</div>
-          <div>&nbsp;</div>
-          <div>Production WebSite</div>
+          <div>Create WebSite</div>
+        </div>
+        <div id="warn">
+          <br /><br /><br />
+          모바일 기기<br />
+          가로 모드로 변경해주세요!
         </div>
       </section>
 
@@ -97,14 +104,24 @@
               <ins>Kim YunSoo</ins>
             </em>
           </div>
-          <div id="introDiv-descript">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
+          <div id="introDiv_descript1">
+            1.Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
             Minus laborum reprehenderit officia atque sequi. <br />
             Doloremque commodi, aperiam consequatur recusandae,<br />
             soluta ipsam error sapiente eos delectus accusantium fugit?<br />
             Adipisci, quia eligendi? <br />
-            <input type="button" value="1" />
-            <input type="button" value="2" />
+          </div>
+          <div id="introDiv_descript2">
+            2.Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
+            Minus laborum reprehenderit officia atque sequi. <br />
+            Doloremque commodi, aperiam consequatur recusandae,<br />
+            soluta ipsam error sapiente eos delectus accusantium fugit?<br />
+            Adipisci, quia eligendi? <br />
+          </div>
+          <div id="introDiv-btns">
+            <br /><br /><br /><br /><br />
+            <input type="button" value="1" onclick="click_1()" />
+            <input type="button" value="2" onclick="click_2()" />
             <input type="button" value="re" onclick="click_re()" />
           </div>
         </div>
@@ -177,34 +194,26 @@
       <footer>
         <ul>
           <li>
-            <h3>
-              <a href="https://iei.or.kr/intro/KHoverview.kh" target="_blank"
-                >학원소개</a
-              >
-            </h3>
+            <a href="https://iei.or.kr/intro/KHoverview.kh" target="_blank"
+              >학원소개</a
+            >
           </li>
           <li>
-            <h3>
-              <a
-                href="https://github.com/kimdia200/kimdia200.github.io"
-                target="_blank"
-                >Repo</a
-              >
-            </h3>
+            <a
+              href="https://github.com/kimdia200/kimdia200.github.io"
+              target="_blank"
+              >Repo</a
+            >
           </li>
           <li>
-            <h3>
-              <a
-                href="https://github.com/kimdia200/kimdia200.github.io/blob/main/ref.txt"
-                target="_blank"
-                >Effect</a
-              >
-            </h3>
+            <a
+              href="https://github.com/kimdia200/kimdia200.github.io/blob/main/ref.txt"
+              target="_blank"
+              >Effect</a
+            >
           </li>
         </ul>
-        <div>
-          <h3 class="copyright">Copyright 2021. 김윤수 all rights reserved.</h3>
-        </div>
+        <div class="copyright">Copyright 2021. 김윤수 all rights reserved.</div>
       </footer>
     </div>
   </body>
