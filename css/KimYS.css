@@ -68,6 +68,10 @@ nav li {
   text-shadow: 0px 0px 0.8vw orange;
   -webkit-text-stroke: 0.05vw orange;
 }
+#li6 {
+  text-shadow: 0px 0px 0.8vw white;
+  -webkit-text-stroke: 0.05vw white;
+}
 
 nav ul:hover * {
   filter: blur(5px);
@@ -103,258 +107,6 @@ section {
   /* 첫화면에 main페이지 보여주기 위함 */
   display: block;
 }
-
-/* ! Contact 세션 */
-/* #content4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-/* contact video */
-#contactVideo {
-  position: absolute;
-  left: 0vh;
-  top: 0vh;
-  width: 100%;
-  height: 78vh;
-  padding: 0;
-  margin: 0;
-}
-
-/* 호버기능 제어 최상단div */
-#contactHover {
-  background-color: black;
-  position: absolute;
-  left: 9%;
-  top: 0vh;
-  width: 82%;
-  height: 78vh;
-  opacity: 0;
-  z-index: 10;
-}
-/* 정보Div */
-#contactDiv {
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  width: 25%;
-  color: orange;
-  margin-left: 0%;
-  margin-top: -20%;
-  padding-left: 10vh;
-  font-size: 2vw;
-  font-weight: bold;
-  z-index: 9;
-  transform: scale(0, 0);
-}
-#email {
-  font-weight: lighter;
-  font-family: "Black Han Sans", sans-serif;
-  -webkit-text-stroke: 0.1vw white;
-}
-#tel {
-  -webkit-text-stroke: 0.1vw white;
-}
-/* Hover 알림 div */
-#Hover {
-  background-color: black;
-  position: absolute;
-  left: 40%;
-  top: 25vh;
-  width: 20%;
-  height: 25vh;
-  opacity: 0.7;
-  color: white;
-  font-size: 2vw;
-  font-weight: bold;
-  text-align: center;
-  line-height: 25vh;
-  border-radius: 50%;
-  z-index: 9;
-  transform: scale(1, 1);
-}
-
-/* 호버기능 구현 */
-#contactHover:hover ~ #contactDiv,
-#contactDiv:hover {
-  transform: scale(1, 1);
-  z-index: 11;
-}
-#contactHover:hover ~ #Hover,
-#contactDiv:hover + #Hover {
-  transform: scale(0, 0);
-}
-
-/* 트랜지션 설정 */
-.contactTran {
-  transition-duration: 1s;
-  transition-timing-function: ease;
-}
-
-#contactDiv-title {
-  position: relative;
-  font-size: 3vw;
-  -webkit-text-stroke: 0.08vw white;
-}
-#contactDiv-title::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  color: bisque;
-  background-color: white;
-  -webkit-text-stroke: 0.1vw orange;
-  border-right: 0.4vw solid white;
-  overflow: hidden;
-  animation: aniName 2s linear infinite;
-}
-
-@keyframes aniName {
-  0% {
-    width: 0;
-  }
-  10% {
-    width: 0;
-  }
-  70% {
-    width: 100%;
-  }
-  90% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-
-/* 전화번호클릭시 전화기능 구현 상태4가지표시 */
-a[href="tel:010-6353-4583"]:link {
-  color: orange;
-  font-family: "Black Han Sans", sans-serif;
-  text-decoration: none;
-  font-weight: lighter;
-}
-a[href="tel:010-6353-4583"]:visited {
-  font-family: "Black Han Sans", sans-serif;
-  color: orange;
-  font-weight: lighter;
-}
-a[href="tel:010-6353-4583"]:hover {
-  font-family: "Black Han Sans", sans-serif;
-  text-decoration: underline;
-  color: white;
-  -webkit-text-stroke: 0.1vw orange;
-  font-weight: lighter;
-}
-a[href="tel:010-6353-4583"]:active {
-  font-family: "Black Han Sans", sans-serif;
-  color: orange;
-  font-weight: lighter;
-}
-
-/* SNS아이콘 설정 */
-#socialList {
-  clear: both;
-  position: relative;
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  text-shadow: none;
-}
-.sns {
-  position: relative;
-  margin: 0;
-  margin-right: 2vw;
-  cursor: pointer;
-}
-.sns a {
-  text-decoration: none;
-}
-.sns a .fa {
-  font-size: 2vw;
-  color: #000;
-}
-.sns::before {
-  font-family: fontAwesome;
-  position: absolute;
-  top: 0.5vw;
-  left: 0;
-  font-size: 2vw;
-  height: 100%;
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-}
-.sns:nth-child(1)::before {
-  content: "\f16d";
-  color: rgb(226, 77, 134);
-  border-bottom: 0.2vw solid rgb(226, 77, 134);
-}
-.sns:nth-child(2)::before {
-  content: "\f27a";
-  color: yellow;
-  border-bottom: 0.2vw solid yellow;
-}
-.sns:nth-child(3)::before {
-  content: "\f143";
-  color: rgb(255, 157, 0);
-  border-bottom: 0.2vw solid rgb(255, 157, 0);
-}
-.sns:nth-child(4)::before {
-  content: "\f09b";
-  color: gray;
-  border-bottom: 0.2vw solid gray;
-}
-.sns:hover::before {
-  height: 0;
-}
-
-/* ! footer부분 */
-footer {
-  width: 100%;
-  height: 10vh;
-  overflow: hidden;
-  position: relative;
-}
-footer ul {
-  position: absolute;
-  left: 0;
-  bottom: 0vh;
-  list-style: none;
-  font-size: 1.5vw;
-  padding-left: 1vw;
-  margin: 0;
-}
-footer ul li {
-  float: left;
-  margin-right: 1vw;
-  position: relative;
-}
-
-footer ul li a:link {
-  color: unset;
-  text-decoration: none;
-}
-footer ul li a:visited {
-  color: unset;
-}
-footer ul li a:hover {
-  text-decoration: underline;
-}
-footer ul li a:active {
-  color: tomato;
-}
-
-.copyright {
-  margin: 0;
-  padding-right: 1vw;
-  position: absolute;
-  bottom: 0vh;
-  right: 0;
-  font-size: 1.5vw;
-}
-
 /* ! Main 세션 */
 #content1 {
   overflow: hidden;
@@ -373,7 +125,7 @@ footer ul li a:active {
 /* 비디오부분 */
 #mainVideo video {
   position: absolute;
-  top: -20vh;
+  top: 0vh;
   width: 100%;
   height: auto;
 }
@@ -441,7 +193,7 @@ footer ul li a:active {
 #warn {
   position: absolute;
   text-align: center;
-  top: 0;
+  bottom: 10vh;
   width: 100%;
   color: red;
   font-size: 3vh;
@@ -459,14 +211,14 @@ footer ul li a:active {
     opacity: 1;
   }
 }
-#subVideo {
+/* #subVideo {
   position: absolute;
   top: 0vh;
   left: -145%;
   height: 78vh;
   overflow: hidden;
   z-index: 1;
-}
+} */
 
 /* ! Introduction 세션 */
 #content2 {
@@ -752,4 +504,423 @@ footer ul li a:active {
 #btn2:hover,
 #btn3:hover {
   transform: scale(1.2, 1.2);
+}
+/* ! Contact 세션 */
+/* #content4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* contact video */
+#contactVideo {
+  position: absolute;
+  left: 0vh;
+  top: 0vh;
+  width: 100%;
+  height: 78vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* 호버기능 제어 최상단div */
+#contactHover {
+  background-color: black;
+  position: absolute;
+  left: 9%;
+  top: 0vh;
+  width: 82%;
+  height: 78vh;
+  opacity: 0;
+  z-index: 10;
+}
+/* 정보Div */
+#contactDiv {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 25%;
+  color: orange;
+  margin-left: 0%;
+  margin-top: -20%;
+  padding-left: 10vh;
+  font-size: 2vw;
+  font-weight: bold;
+  z-index: 9;
+  transform: scale(0, 0);
+}
+#email {
+  font-weight: lighter;
+  font-family: "Black Han Sans", sans-serif;
+  -webkit-text-stroke: 0.1vw white;
+}
+#tel {
+  -webkit-text-stroke: 0.1vw white;
+}
+/* Hover 알림 div */
+#Hover {
+  background-color: black;
+  position: absolute;
+  left: 40%;
+  top: 25vh;
+  width: 20%;
+  height: 25vh;
+  opacity: 0.7;
+  color: white;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25vh;
+  border-radius: 50%;
+  z-index: 9;
+  transform: scale(1, 1);
+}
+
+/* 호버기능 구현 */
+#contactHover:hover ~ #contactDiv,
+#contactDiv:hover {
+  transform: scale(1, 1);
+  z-index: 11;
+}
+#contactHover:hover ~ #Hover,
+#contactDiv:hover + #Hover {
+  transform: scale(0, 0);
+}
+
+/* 트랜지션 설정 */
+.contactTran {
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+#contactDiv-title {
+  position: relative;
+  font-size: 3vw;
+  -webkit-text-stroke: 0.08vw white;
+}
+#contactDiv-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: bisque;
+  background-color: white;
+  -webkit-text-stroke: 0.1vw orange;
+  border-right: 0.4vw solid white;
+  overflow: hidden;
+  animation: aniName 2s linear infinite;
+}
+
+@keyframes aniName {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 0;
+  }
+  70% {
+    width: 100%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* 전화번호클릭시 전화기능 구현 상태4가지표시 */
+a[href="tel:010-6353-4583"]:link {
+  color: orange;
+  font-family: "Black Han Sans", sans-serif;
+  text-decoration: none;
+  font-weight: lighter;
+}
+a[href="tel:010-6353-4583"]:visited {
+  font-family: "Black Han Sans", sans-serif;
+  color: orange;
+  font-weight: lighter;
+}
+a[href="tel:010-6353-4583"]:hover {
+  font-family: "Black Han Sans", sans-serif;
+  text-decoration: underline;
+  color: white;
+  -webkit-text-stroke: 0.1vw orange;
+  font-weight: lighter;
+}
+a[href="tel:010-6353-4583"]:active {
+  font-family: "Black Han Sans", sans-serif;
+  color: orange;
+  font-weight: lighter;
+}
+
+/* SNS아이콘 설정 */
+#socialList {
+  clear: both;
+  position: relative;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  text-shadow: none;
+}
+.sns {
+  position: relative;
+  margin: 0;
+  margin-right: 2vw;
+  cursor: pointer;
+}
+.sns a {
+  text-decoration: none;
+}
+.sns a .fa {
+  font-size: 2vw;
+  color: #000;
+}
+.sns::before {
+  font-family: fontAwesome;
+  position: absolute;
+  top: 0.5vw;
+  left: 0;
+  font-size: 2vw;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.sns:nth-child(1)::before {
+  content: "\f16d";
+  color: rgb(226, 77, 134);
+  border-bottom: 0.2vw solid rgb(226, 77, 134);
+}
+.sns:nth-child(2)::before {
+  content: "\f27a";
+  color: yellow;
+  border-bottom: 0.2vw solid yellow;
+}
+.sns:nth-child(3)::before {
+  content: "\f143";
+  color: rgb(255, 157, 0);
+  border-bottom: 0.2vw solid rgb(255, 157, 0);
+}
+.sns:nth-child(4)::before {
+  content: "\f09b";
+  color: gray;
+  border-bottom: 0.2vw solid gray;
+}
+.sns:hover::before {
+  height: 0;
+}
+
+/* ! footer부분 */
+footer {
+  width: 100%;
+  height: 10vh;
+  overflow: hidden;
+  position: relative;
+}
+footer ul {
+  position: absolute;
+  left: 0;
+  bottom: 0vh;
+  list-style: none;
+  font-size: 1.5vw;
+  padding-left: 1vw;
+  margin: 0;
+}
+footer ul li {
+  float: left;
+  margin-right: 1vw;
+  position: relative;
+}
+
+footer ul li a:link {
+  color: unset;
+  text-decoration: none;
+}
+footer ul li a:visited {
+  color: unset;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+}
+footer ul li a:active {
+  color: tomato;
+}
+
+.copyright {
+  margin: 0;
+  padding-right: 1vw;
+  position: absolute;
+  bottom: 0vh;
+  right: 0;
+  font-size: 1.5vw;
+}
+
+
+
+/* ! 로그인부분 */
+#content6 {
+  position: absolute;
+  display: none;
+  top: 10vh;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 78vh;
+  overflow: hidden;
+  border : 3px solid red;
+  z-index: 999;
+  animation-name: aaaa;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@keyframes aaaa{
+  0%{
+    transform: scale(0,0);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+
+#LogFrame{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  border: 3px solid white;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#Logback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 80vh;
+  background: linear-gradient(
+    -30deg,
+    #03a9f4,
+    #3a78b7 50%,
+    #262626 50%,
+    #607d8b 100%
+  );
+  /* filter: hue-rotate(120deg); */
+  animation: animate 10s linear infinite;
+  border-radius: 20%;
+}
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#exitImg{
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.box {
+  position: relative;
+  padding: 1vw;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20%;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 15%,
+    transparent 50%,
+    transparent 85%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
+.box .form {
+  position: relative;
+  width: 100%;
+}
+.box .form h2 {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0;
+  margin-bottom: 2vh;
+  font-size: 4vw;
+}
+.box .form .inputBox {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+.box .form .inputBox input {
+  width: 27vw;
+  height: 3.5vw;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border-radius: 6px;
+  color: white;
+  font-size: 2vw;
+  font-weight: 300;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
+  padding-left: 4.5vw;
+}
+.box .form .inputBox img {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  filter: invert(1);
+}
+.remember {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 1vh;
+  cursor: pointer;
+  font-size: 2vw;
+}
+.box .form .inputBox input[type="button"] {
+  background: white;
+  color: black;
+  padding: 0;
+  box-shadow: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.box .form .inputBox input::placeholder {
+  color: white;
+}
+.box p{
+  font-size: 2vw;
+  margin: 0;
+}
+#form1{
+  transform: translateX(16vw);
+  transition-duration: 1s;
+}
+#form2{
+  transform: translateX(116vw);
+  transition-duration: 1s;
 }

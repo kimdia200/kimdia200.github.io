@@ -16,8 +16,8 @@
       href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Han+Sans&display=swap"
       rel="stylesheet"
     />
-
     <script src="./js/KimYS.js"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
     <title>KH-개인프로젝트-김윤수</title>
   </head>
   <body>
@@ -27,11 +27,12 @@
       <header>
         <nav>
           <ul>
-            <li id="li1" class="tran" onclick="test1(this)">Main</li>
-            <li id="li2" class="tran" onclick="test1(this)">Introduction</li>
-            <li id="li3" class="tran" onclick="test1(this)">Interests</li>
-            <li id="li4" class="tran" onclick="test1(this)">Roadmap</li>
-            <li id="li5" class="tran" onclick="test1(this)">Contact</li>
+            <li id="li1" class="tran" onclick="li1(this)">Main</li>
+            <li id="li2" class="tran" onclick="li1(this)">Introduction</li>
+            <li id="li3" class="tran" onclick="li1(this)">Interests</li>
+            <li id="li4" class="tran" onclick="li1(this)">Roadmap</li>
+            <li id="li5" class="tran" onclick="li1(this)">Contact</li>
+            <li id="li6" class="tran" onclick="li2()">Sign in</li>
           </ul>
         </nav>
       </header>
@@ -42,9 +43,9 @@
         <div id="mainVideo">
           <video src="./videos/main.mp4" autoplay loop muted></video>
         </div>
-        <div id="subVideo">
+        <!-- <div id="subVideo">
           <video src="./videos/main.mp4" autoplay loop muted></video>
-        </div>
+        </div> -->
         <div id="mainDiv">
           <div>Alone Project</div>
           <div>Create WebSite</div>
@@ -195,6 +196,87 @@
         </div>
         <div id="Hover" class="contactTran">Here!!</div>
       </section>
+      <!-- 로그인세션 -->
+      <div id="content6">
+        <div id="LogFrame">
+          <div id="Logback">
+            <div class="box">
+              <!-- form1 -->
+              <!--
+                input
+                ID : #userId
+                pwd : #pwd
+                btn : #btn_login
+              -->
+              <div class="form" id="form1">
+                <h2>Login</h2>
+                <form action="">
+                  <div class="inputBox">
+                    <img src="./images/user.png" alt="" style="width: 3vw" />
+                    <input class="inputArea"
+                      type="text"
+                      name="userId"
+                      id="userId"
+                      placeholder="UserId"
+                      value=''
+                    />
+                  </div>
+                  <div class="inputBox">
+                    <img src="./images/pwd.png" alt="" style="width: 3vw" />
+                    <input class="inputArea" type="password" name="pwd" id="pwd" placeholder="pwd" />
+                  </div>
+                  <input
+                    type="checkbox"
+                    name="remember"
+                    id="remember"
+                    class="remember"
+                  />
+                  <label for="remember" class="remember">Remember me</label>
+                  <div class="inputBox">
+                    <input type="button" value="Login" id="btn_login" onclick="login()" />
+                  </div>
+                </form>
+                <p>Need an <a href="#" onclick="changeForm1()">Account</a></p>
+                <img src="./images/exit.png" alt="" onclick="li2()" id="exitImg" style="width: 3vw">
+              </div>
+              <!-- form2 -->
+              <!-- 
+                id : #upID
+                pwd : #upPwd
+                check : #chk_pwd
+                btn : #btn_signup
+              -->
+              <div class="form" id="form2">
+                <h2>Sign Up</h2>
+                <form action="">
+                  <div class="inputBox">
+                    <img src="./images/user.png" alt="" style="width: 3vw" />
+                    <input class="inputArea"
+                      type="text"
+                      name="upID"
+                      id="upID"
+                      placeholder="ID: 영문자/숫자 6글자이상"
+                    />
+                  </div>
+                  <div class="inputBox">
+                    <img src="./images/pwd.png" alt="" style="width: 3vw" />
+                    <input class="inputArea" type="password" name="upPwd" id="upPwd" placeholder="PWD: 최소 4글자~12글자." />
+                  </div>
+                  <div class="inputBox">
+                    <img src="./images/pwd.png" alt="" style="width: 3vw" />
+                    <input class="inputArea" type="password" name="chk_pwd" id="chk_pwd" placeholder="비밀번호 확인" />
+                  </div>
+                  <div class="inputBox">
+                    <input type="button" value="sign up" id="btn_signup" onclick="signup()"/>
+                  </div>
+                </form>
+                <p><a href="#" onclick="changeForm2()">LogIn Page</a></p>
+                <img src="./images/exit.png" alt="" onclick="li2()" id="exitImg" style="width: 3vw">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div >
 
       <!-- todo Footer -->
       <footer>

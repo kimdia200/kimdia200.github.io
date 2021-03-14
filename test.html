@@ -3,31 +3,149 @@
   <head>
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <style>
-      body > div {
-        position: absolute;
-        left: 20%;
-        top: 25%;
-        width: 60%;
-        height: 50%;
-        background-color: gray;
-        padding: 0;
-        text-align: center;
-      }
-      body > div > div {
-        padding-top: 12vh;
-      }
-    </style>
   </head>
   <body>
-    <div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
-        Minus laborum reprehenderit officia atque sequi. <br />
-        Doloremque commodi, aperiam consequatur recusandae,<br />
-        soluta ipsam error sapiente eos delectus accusantium fugit?<br />
-        Adipisci, quia eligendi? <br />
+    <div id="Logback">
+      <div class="box">
+        <div class="form">
+          <h2>login</h2>
+          <form action="">
+            <div class="inputBox">
+              <img src="./images/user.png" alt="" style="width: 3vw" />
+              <input
+                type="text"
+                name="userId"
+                id="userId"
+                placeholder="UserId"
+              />
+            </div>
+            <div class="inputBox">
+              <img src="./images/pwd.png" alt="" style="width: 3vw" />
+              <input type="text" name="pwd" id="pwd" placeholder="pwd" />
+            </div>
+            <input
+              type="checkbox"
+              name="remember"
+              id="remember"
+              class="remember"
+            />
+            <label for="remember" class="remember">Remember me</label>
+            <div class="inputBox">
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+          <p>Forget <a href="#">PassWord</a></p>
+          <p>Need an <a href="#">Account</a></p>
+        </div>
       </div>
     </div>
+    <style>
+      #Logback {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(
+          -30deg,
+          #03a9f4,
+          #3a78b7 50%,
+          #262626 50%,
+          #607d8b 100%
+        );
+        /* filter: hue-rotate(120deg); */
+        animation: animate 10s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          filter: hue-rotate(0);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      .box {
+        position: relative;
+        padding: 50px;
+        width: 360px;
+        height: 480px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20%;
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+      }
+      .box::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0.1) 15%,
+          transparent 50%,
+          transparent 85%,
+          rgba(255, 255, 255, 0.3) 100%
+        );
+      }
+      .box .form {
+        position: relative;
+        width: 100%;
+      }
+      .box .form h2 {
+        color: white;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+      }
+      .box .form .inputBox {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .box .form .inputBox input {
+        width: 30vw;
+        height: 3.5vw;
+        outline: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        border-radius: 6px;
+        color: white;
+        font-size: 2vw;
+        font-weight: 300;
+        box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
+        padding-left: 4.5vw;
+      }
+      .box .form .inputBox img {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        filter: invert(1);
+      }
+      .remember {
+        position: relative;
+        display: inline-block;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .box .form .inputBox input[type="submit"] {
+        background: white;
+        color: black;
+        padding: 0;
+        box-shadow: none;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+      .box .form .inputBox input::placeholder {
+        color: white;
+      }
+    </style>
   </body>
 </html>
