@@ -53,8 +53,23 @@ var li2 = function(){
     if(confirm(id+'님 정말 로그아웃 하시겠습니까?')==true){
       id=null;
       li6.innerText = 'Sign in';
+      li7.style.display = 'block';
     }
   }
+}
+
+//member클릭시 회원목록 alert창으로 보여줌
+var li3 = function(){
+  var str ='';
+  var i=0;
+  for(var key in localStorage){
+    if(i==localStorage.length){
+      break;
+    }
+    str+= key + ' : ' + localStorage[key]+'\n';
+    i++;
+  }
+  alert('현재 가입한 회원 목록 \n'+str)
 }
 
 // Intro부분 클릭에 따라 실행됨
@@ -97,8 +112,6 @@ function login(){
   // ID : #userId
   // pwd : #pwd
   // btn : #btn_login
-  console.log($('#userId').val());
-  console.log($('#pwd').val());
   if(localStorage.getItem($('#userId').val())==$('#pwd').val()){
     alert('로그인성공');
     id = $('#userId').val();
@@ -117,6 +130,7 @@ function login(){
 
 
   content6.style.display = 'none';
+  li7.style.display = 'inline-block';
   li6.innerText='Sign Out';
 
 }
@@ -149,6 +163,6 @@ function signup(){
 
   localStorage.setItem($('#upID').val(), $('#upPwd').val());
   $('.inputArea').val('');
-  alert('회원가입이 완료 되었습니다.')
+  alert('회원가입이 완료 되었습니다.');
   changeForm2();
 }
