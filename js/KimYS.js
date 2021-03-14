@@ -53,7 +53,7 @@ var li2 = function(){
     if(confirm(id+'님 정말 로그아웃 하시겠습니까?')==true){
       id=null;
       li6.innerText = 'Sign in';
-      li7.style.display = 'block';
+      li7.style.display = 'none';
     }
   }
 }
@@ -165,4 +165,37 @@ function signup(){
   $('.inputArea').val('');
   alert('회원가입이 완료 되었습니다.');
   changeForm2();
+}
+
+// Roadmap
+//range1~4에 따른 화면전환
+var ran = function(){
+  // console.log($('#year').val());
+  switch ($('#year').val()) {
+    case '1':
+      label_year.innerHTML = 'This Year<br>Junior Developer'
+      $('.content4_bottom').css('display','none');
+      $('.content4_bottom:eq(0)').css('display','block');
+      break;
+    case '2':
+      label_year.innerHTML = '5years later<br>Senior Developer'
+      $('.content4_bottom').css('display','none');
+      $('.content4_bottom:eq(1)').css('display','block');
+      break;
+    case '3':
+      label_year.innerHTML = '10years later<br>Project Manager'
+      $('.content4_bottom').css('display','none');
+      $('.content4_bottom:eq(2)').css('display','block');
+      break;
+    case '4':
+      label_year.innerHTML = '15years later<br>A Successful CEO'
+      $('.content4_bottom').css('display','none');
+      $('.content4_bottom:eq(3)').css('display','block');
+      break;
+    case '5':
+      label_year.innerHTML = '20years later<br>Financial Independence'
+      $('.content4_bottom').css('display','none');
+      $('.content4_bottom:eq(4)').css('display','block');
+      break;
+  }
 }
