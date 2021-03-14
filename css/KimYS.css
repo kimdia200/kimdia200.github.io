@@ -941,7 +941,7 @@ footer ul li a:active {
 #label_year{
   width: 100%;
   height: 13vh;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-family: "Alfa Slab One", cursive;
   animation-name: label_year_ani;
   animation-duration: 1s;
@@ -949,6 +949,7 @@ footer ul li a:active {
   animation-direction: alternate;
   -webkit-text-stroke: 0.1vw deepskyblue;
   font-weight: bold;
+  margin-bottom: 1vh;
 }
 @keyframes label_year_ani {
   0% {
@@ -1036,7 +1037,7 @@ footer ul li a:active {
 .centerDiv Div:first-of-type{
   color: skyblue;
   margin-top: 5vh;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
   font-size: 5vw;
   font-family: "Black Han Sans", sans-serif;
   -webkit-text-stroke: 0.1vw deepskyblue;
@@ -1045,7 +1046,7 @@ footer ul li a:active {
 .centerDiv Div:last-of-type{
   position: absolute;
   font-size: 1.7vw;
-  top: 17vh;
+  top: 19vh;
   left: 0;
   width: 24vw;
   height: 25vh;
