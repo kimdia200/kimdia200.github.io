@@ -61,8 +61,8 @@ nav li {
   -webkit-text-stroke: 0.05vw red;
 }
 #li4 {
-  text-shadow: 0px 0px 0.8vw blue;
-  -webkit-text-stroke: 0.05vw blue;
+  text-shadow: 0px 0px 0.8vw deepskyblue;
+  -webkit-text-stroke: 0.05vw deepskyblue;
 }
 #li5 {
   text-shadow: 0px 0px 0.8vw orange;
@@ -734,16 +734,16 @@ a[href="tel:010-6353-4583"]:active {
   animation-iteration-count: 1;
 }
 
-@keyframes aaaa{
-  0%{
-    transform: scale(0,0);
+@keyframes aaaa {
+  0% {
+    transform: scale(0, 0);
   }
-  100%{
-    transform: scale(1,1);
+  100% {
+    transform: scale(1, 1);
   }
 }
 
-#LogFrame{
+#LogFrame {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -778,7 +778,7 @@ a[href="tel:010-6353-4583"]:active {
   }
 }
 
-#exitImg{
+#exitImg {
   cursor: pointer;
   filter: invert(1);
 }
@@ -868,15 +868,15 @@ a[href="tel:010-6353-4583"]:active {
 .box .form .inputBox input::placeholder {
   color: white;
 }
-.box p{
+.box p {
   font-size: 2vw;
   margin: 0;
 }
-#form1{
+#form1 {
   transform: translateX(16vw);
   transition-duration: 1s;
 }
-#form2{
+#form2 {
   transform: translateX(116vw);
   transition-duration: 1s;
 }
@@ -932,13 +932,13 @@ footer ul li a:active {
   position: relative;
   text-align: center;
 }
-.content4_top{
+.content4_top {
   position: absolute;
   z-index: 10;
   width: 100%;
   height: 20vh;
 }
-#label_year{
+#label_year {
   width: 100%;
   height: 13vh;
   font-size: 2.5vw;
@@ -949,7 +949,7 @@ footer ul li a:active {
   animation-direction: alternate;
   -webkit-text-stroke: 0.1vw deepskyblue;
   font-weight: bold;
-  margin-bottom: 1vh;
+  margin-bottom: 0.5vh;
 }
 @keyframes label_year_ani {
   0% {
@@ -965,41 +965,43 @@ footer ul li a:active {
     transform: scale(0.9, 0.9);
   }
 }
-#year{
+#year {
   margin-top: 2vh;
   width: 30vw;
   z-index: 98;
 }
 .slider {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   appearance: none;
-  width: 100%; 
-  background: #d3d3d3; 
+  width: 100%;
+  background: skyblue;
+  border: 2px solid white;
   outline: none;
-  -webkit-transition: .2s; 
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  opacity: 0.5;
 }
 
 .slider:hover {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 2vw;
-  height: 2vw; 
-  background: deepskyblue; 
-  cursor: pointer; 
+  height: 2vw;
+  background: deepskyblue;
+  cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 2vw; 
-  height: 2vw; 
-  background: deepskyblue; 
-  cursor: pointer; 
+  width: 2vw;
+  height: 2vw;
+  background: deepskyblue;
+  cursor: pointer;
 }
-.content4_bottom{
+.content4_bottom {
   z-index: 0;
   /* 추후 width, height바꿈 */
   width: 99.5%;
@@ -1009,10 +1011,10 @@ footer ul li a:active {
   left: 0;
   display: none;
 }
-#bottom_main{
+#bottom_main {
   display: block;
 }
-.leftImg{
+.leftImg {
   position: absolute;
   left: 0;
   top: 0;
@@ -1021,7 +1023,7 @@ footer ul li a:active {
   border-radius: 20%;
   border: 2px solid white;
 }
-.centerDiv{
+.centerDiv {
   position: absolute;
   top: 0;
   margin: 5px;
@@ -1034,7 +1036,7 @@ footer ul li a:active {
   transition-duration: 1s;
   border: 2px solid white;
 }
-.centerDiv Div:first-of-type{
+.centerDiv Div:first-of-type {
   color: skyblue;
   margin-top: 5vh;
   margin-bottom: 2vh;
@@ -1043,7 +1045,7 @@ footer ul li a:active {
   -webkit-text-stroke: 0.1vw deepskyblue;
   text-decoration: underline;
 }
-.centerDiv Div:last-of-type{
+.centerDiv Div:last-of-type {
   position: absolute;
   font-size: 1.7vw;
   top: 19vh;
@@ -1056,7 +1058,7 @@ footer ul li a:active {
   -webkit-text-stroke: 0.1vw skyblue;
 }
 
-.rightImg{
+.rightImg {
   position: absolute;
   right: 0;
   top: 0;
@@ -1064,4 +1066,117 @@ footer ul li a:active {
   height: 100%;
   border-radius: 20%;
   border: 2px solid white;
+}
+
+/* ! 세션3 */
+#content3 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  font-family: consolas;
+}
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.container .boxx {
+  position: relative;
+  width: 20vw;
+  height: 70vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+  border: 3px solid white;
+  animation-name: boxx;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes boxx {
+  0%,
+  100% {
+    box-shadow: 0px 0px 0px white;
+  }
+  50% {
+    box-shadow: 0px 0px 2vw white;
+  }
+}
+.container .boxx .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  clip-path: circle(800px at center 8vw);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.container .boxx:hover .imgBx {
+  clip-path: circle(6vw at center 8vw);
+  transition-delay: 0s;
+}
+.container .boxx .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .boxx .content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.container .boxx .content h2 {
+  margin: 0;
+  padding: 0;
+}
+.container .boxx .content a {
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+}
+.container .boxx .content h2 {
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(20px);
+  font-size: 3vw;
+  -webkit-text-stroke: 0.15vw red;
+  text-shadow: 0 0 1vw red;
+  text-decoration: underline;
+}
+.container .boxx .content p,
+.container .boxx .content a {
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(20px);
+  font-size: 1.5vw;
+}
+.container .boxx:hover .content h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+.container .boxx:hover .content p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+.container .boxx:hover .content a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
 }
