@@ -176,22 +176,22 @@ var ran = function () {
   // console.log($('#year').val());
   switch ($("#year").val()) {
     case "1":
-      label_year.innerHTML = "This Year<br>Junior Developer";
+      label_year.innerHTML = "This Year<br>Developer Start";
       $(".content4_bottom").css("display", "none");
       $(".content4_bottom:eq(0)").css("display", "block");
       break;
     case "2":
-      label_year.innerHTML = "5years later<br>Senior Developer";
+      label_year.innerHTML = "5years later<br>Junior Developer";
       $(".content4_bottom").css("display", "none");
       $(".content4_bottom:eq(1)").css("display", "block");
       break;
     case "3":
-      label_year.innerHTML = "10years later<br>Project Manager";
+      label_year.innerHTML = "10years later<br>Senior Developer";
       $(".content4_bottom").css("display", "none");
       $(".content4_bottom:eq(2)").css("display", "block");
       break;
     case "4":
-      label_year.innerHTML = "15years later<br>A Successful CEO";
+      label_year.innerHTML = "15years later<br>Project Manager";
       $(".content4_bottom").css("display", "none");
       $(".content4_bottom:eq(3)").css("display", "block");
       break;
@@ -210,20 +210,44 @@ function inter() {
   $(".hover").hover(
     function () {
       var str = $(this).prev().prev().html();
-      console.log(str == "Shoes");
       if (str == "Shoes") {
-        chgImg("img1.jpg", "img1.jpg", "img1.jpg", "img1.jpg");
+        chgImg(
+          "../images/shoes1.png",
+          "../images/shoes2.png",
+          "../images/shoes3.png",
+          "../images/shoes4.png"
+        );
       } else if (str == "Music") {
-        chgImg("img2.jpg", "img2.jpg", "img2.jpg", "img2.jpg");
+        chgImg(
+          "../images/music2.png",
+          "../images/music1.jpg",
+          "../images/music3.png",
+          "../images/music4.png"
+        );
       } else if (str == "Game") {
-        chgImg("img3.jpg", "img3.jpg", "img3.jpg", "img3.jpg");
+        chgImg(
+          "../images/game1.png",
+          "../images/game2.png",
+          "../images/game3.png",
+          "../images/game4.png"
+        );
       } else if (str == "Food") {
-        chgImg("img4.jpg", "img4.jpg", "img4.jpg", "img4.jpg");
+        chgImg(
+          "../images/food1.png",
+          "../images/food2.png",
+          "../images/food3.png",
+          "../images/food4.png"
+        );
       }
     },
     function () {
       // img1.jpg, img2.jpg, img3.jpg, img4.jpg
-      chgImg("img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg");
+      chgImg(
+        "../images/shoes1.png",
+        "../images/music1.jpg",
+        "../images/game3.png",
+        "../images/food4.png"
+      );
     }
   );
 }

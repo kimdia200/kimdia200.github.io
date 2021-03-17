@@ -856,6 +856,10 @@ a[href="tel:010-6353-4583"]:active {
   cursor: pointer;
   font-size: 2vw;
 }
+#remember {
+  width: 2vw;
+  height: 2vw;
+}
 .box .form .inputBox input[type="button"] {
   background: white;
   color: black;
@@ -1098,6 +1102,7 @@ footer ul li a:active {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
 @keyframes boxx {
   0%,
   100% {
@@ -1164,6 +1169,11 @@ footer ul li a:active {
   transition: 0.5s;
   transform: translateY(20px);
   font-size: 1.5vw;
+}
+.container .boxx .content a {
+  color: red;
+  border: 0.3vw solid red;
+  border-radius: 10%;
 }
 .container .boxx:hover .content h2 {
   opacity: 1;
