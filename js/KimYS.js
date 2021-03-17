@@ -1,14 +1,13 @@
 var id = null;
 
+function Member(userId, userPwd) {
+  this.userId = userId;
+  this.userPwd = userPwd;
+}
+
 var li1 = function (li) {
   //모든 세션 display:none
   // Jquery배운뒤로 JQuery로 처리
-
-  // var sections = document.getElementsByTagName("section");
-
-  // for(var i=0; i<sections.length; i++){
-  //   sections[i].style.display = "none";
-  // }
   $("section").css("display", "none");
 
   //Header부분 클릭한 값에 따라 세션 창 보여줌
@@ -37,12 +36,12 @@ var li2 = function () {
     $(".inputArea").val("");
     content6.style.display = "block";
     li6.innerText = "Close";
-    if (
-      localStorage.getItem("autoId") != null &&
-      localStorage.getItem("autoPwd") != null
-    ) {
-      $("#userId").val(localStorage.getItem("autoId"));
-      $("#pwd").val(localStorage.getItem("autoPwd"));
+
+    // 아이비 비밀번호 기억했다면 자동 채워주기부분
+    if (localStorage.getItem("auto") != null) {
+      var auto = JSON.parse(localStorage.getItem("auto"));
+      $("#userId").val(auto[0].userId);
+      $("#pwd").val(auto[0].userPwd);
       remember.checked = true;
     }
 
@@ -61,20 +60,50 @@ var li2 = function () {
   }
 };
 
-//member클릭시 회원목록 alert창으로 보여줌
+//member클릭시 새창을 만들고 Table태그를 만들어 그안에 회원리스트 담아줌
 var li3 = function () {
-  var str = "";
-  var i = 0;
-  for (var key in localStorage) {
-    if (i == localStorage.length) {
-      break;
-    }
-    if (key != "autoId" && key != "autoPwd") {
-      str += key + " : " + localStorage[key] + "\n";
-    }
-    i++;
+  var left = screen.availWidth / 2 - 150;
+  var top = screen.availHeight / 2 - 150;
+  var w = open(
+    "",
+    "newWindow",
+    "width = 300, height=300, top=" + top + ", left=" + left
+  );
+  var $new = $(w.document);
+  $new.find("head").append("<title>멤버 리스트 보기</title>");
+  $new
+    .find("head")
+    .append(
+      "<style>" +
+        "html {display: flex;justify-content: center;align-items: center; background: black; color:white} " +
+        "#member_list { border: 1px solid white;border-collapse: collapse;margin: 10px 0; text-align: center;}" +
+        " #member_list th, #member_list td {border: 1px solid white;padding: 5px;}" +
+        "</style>"
+    );
+  $new.find("body").append('<table id="member_list"></table>');
+
+  // localStorage.entries || []
+  var members = JSON.parse(localStorage.getItem("members")) || [];
+
+  var $table = $new.find("#member_list");
+
+  //header추가
+  $table.html("<tr><th>No</th><th>USER-ID</th><th>PassWord</th></tr>");
+
+  if (members.length) {
+    //저장된 entry가 있는 경우
+    $.each(members, function (i, member) {
+      var $tr = $("<tr>");
+      $tr
+        .append("<td>" + (i + 1) + "</td>")
+        .append("<td>" + member.userId + "</td>")
+        .append("<td>" + member.userPwd + "</td>")
+        .appendTo($table);
+    });
+  } else {
+    //저장된 entry가 없는 경우
+    $table.append("<tr><td colspan='3'>조회된 회원이 없습니다.</td></tr>");
   }
-  alert("현재 가입한 회원 목록 \n" + str);
 };
 
 // Intro부분 클릭에 따라 실행됨
@@ -117,7 +146,17 @@ function login() {
   // ID : #userId
   // pwd : #pwd
   // btn : #btn_login
-  if (localStorage.getItem($("#userId").val()) == $("#pwd").val()) {
+
+  var members = JSON.parse(localStorage.getItem("members")) || [];
+  var pwd;
+  for (var i in members) {
+    if (members[i].userId == $("#userId").val()) {
+      pwd = members[i].userPwd;
+      break;
+    }
+  }
+
+  if (pwd != null) {
     alert("로그인성공");
     id = $("#userId").val();
   } else {
@@ -126,11 +165,17 @@ function login() {
   }
 
   if (remember.checked == false) {
-    localStorage.removeItem("autoId");
-    localStorage.removeItem("autoPwd");
+    localStorage.removeItem("auto");
   } else {
-    localStorage.setItem("autoId", $("#userId").val());
-    localStorage.setItem("autoPwd", $("#pwd").val());
+    //Member 배열
+    var auto = [];
+    auto.push(new Member($("#userId").val(), $("#pwd").val()));
+
+    //JSON문자열로 변환
+    var jsonAuto = JSON.stringify(auto);
+
+    //localStorage에 저장
+    localStorage.setItem("auto", jsonAuto);
   }
 
   content6.style.display = "none";
@@ -164,7 +209,15 @@ function signup() {
     return;
   }
 
-  localStorage.setItem($("#upID").val(), $("#upPwd").val());
+  //Member 배열
+  var members = JSON.parse(localStorage.getItem("members")) || [];
+  members.push(new Member($("#upID").val(), $("#upPwd").val()));
+
+  //JSON문자열로 변환
+  var jsonMembers = JSON.stringify(members);
+
+  //localStorage에 저장
+  localStorage.setItem("members", jsonMembers);
   $(".inputArea").val("");
   alert("회원가입이 완료 되었습니다.");
   changeForm2();
@@ -173,7 +226,6 @@ function signup() {
 // Roadmap
 //range1~4에 따른 화면전환
 var ran = function () {
-  // console.log($('#year').val());
   switch ($("#year").val()) {
     case "1":
       label_year.innerHTML = "This Year<br>Developer Start";
@@ -251,7 +303,7 @@ function inter() {
     }
   );
 }
-
+//이미지 변경해주는 함수(반복구조 최소화)
 function chgImg(a, b, c, d) {
   $("#content3")
     .find("img")

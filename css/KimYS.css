@@ -510,12 +510,279 @@ section {
 #btn3:hover {
   transform: scale(1.2, 1.2);
 }
-/* ! Contact 세션 */
-/* #content4 {
-  display: flex;
+/* ! Interests 세션 */
+#content3 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80vh;
   justify-content: center;
   align-items: center;
-} */
+  font-family: consolas;
+}
+/* 요소들을 담는 DIV */
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* 박스 요소 */
+.container .boxx {
+  position: relative;
+  width: 20vw;
+  height: 70vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+  border: 3px solid white;
+  animation-name: boxx;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+/* 박스요소에 추가할 애니메이션 */
+@keyframes boxx {
+  0%,
+  100% {
+    box-shadow: 0px 0px 0px white;
+  }
+  50% {
+    box-shadow: 0px 0px 2vw white;
+  }
+}
+/* 이미지 부분 */
+.container .boxx .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  clip-path: circle(800px at center 8vw);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+/* 박스 호버시 이미지 변화 */
+.container .boxx:hover .imgBx {
+  clip-path: circle(6vw at center 8vw);
+  transition-delay: 0s;
+}
+.container .boxx .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 박스의 내용 부분 */
+.container .boxx .content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* 박스 요소중 제목 담당 부분 */
+.container .boxx .content h2 {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(20px);
+  font-size: 4vw;
+  -webkit-text-stroke: 0.15vw red;
+  text-shadow: 0 0 1vw red;
+  text-decoration: underline;
+}
+
+.container .boxx .content p,
+.container .boxx .content a {
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(20px);
+  font-size: 1.5vw;
+}
+/* 내용부분 */
+.container .boxx .content a {
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+}
+/* 호버할 영역 부분 */
+.container .boxx .content a {
+  color: red;
+  border: 0.3vw solid red;
+  border-radius: 10%;
+  background-color: white;
+  font-weight: bold;
+}
+.container .boxx:hover .content h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+.container .boxx:hover .content p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+.container .boxx:hover .content a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
+/* ! Roadmap 세션 */
+#content4 {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+.content4_top {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 20vh;
+}
+#label_year {
+  width: 100%;
+  height: 13vh;
+  font-size: 2.5vw;
+  font-family: "Alfa Slab One", cursive;
+  animation-name: label_year_ani;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-text-stroke: 0.1vw deepskyblue;
+  font-weight: bold;
+  margin-bottom: 0.5vh;
+}
+@keyframes label_year_ani {
+  0% {
+    text-shadow: 0 0 0vw deepskyblue;
+    transform: scale(0.9, 0.9);
+  }
+  50% {
+    text-shadow: 0 0 3vw deepskyblue;
+    transform: scale(1, 1);
+  }
+  100% {
+    text-shadow: 0 0 0vw deepskyblue;
+    transform: scale(0.9, 0.9);
+  }
+}
+#year {
+  margin-top: 2vh;
+  width: 30vw;
+  z-index: 98;
+}
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: skyblue;
+  border: 2px solid white;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  opacity: 0.5;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2vw;
+  height: 2vw;
+  background: deepskyblue;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 2vw;
+  height: 2vw;
+  background: deepskyblue;
+  cursor: pointer;
+}
+.content4_bottom {
+  z-index: 0;
+  /* 추후 width, height바꿈 */
+  width: 99.5%;
+  height: 57vh;
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  display: none;
+}
+#bottom_main {
+  display: block;
+}
+.leftImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 37%;
+  height: 100%;
+  border-radius: 20%;
+  border: 2px solid white;
+}
+.centerDiv {
+  position: absolute;
+  top: 0;
+  margin: 5px;
+  left: 37.5%;
+  width: 24%;
+  height: 96%;
+  text-align: center;
+  border-radius: 20%;
+  box-shadow: 0 0 3vh white;
+  transition-duration: 1s;
+  border: 2px solid white;
+}
+.centerDiv Div:first-of-type {
+  color: skyblue;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  font-size: 5vw;
+  font-family: "Black Han Sans", sans-serif;
+  -webkit-text-stroke: 0.1vw deepskyblue;
+  text-decoration: underline;
+}
+.centerDiv Div:last-of-type {
+  position: absolute;
+  font-size: 1.7vw;
+  top: 19vh;
+  left: 0;
+  width: 24vw;
+  height: 25vh;
+  line-height: 4vh;
+  text-shadow: 0 0 1vw skyblue;
+  font-family: "Black Han Sans", sans-serif;
+  -webkit-text-stroke: 0.1vw skyblue;
+}
+
+.rightImg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 37%;
+  height: 100%;
+  border-radius: 20%;
+  border: 2px solid white;
+}
+
+/* ! Contact 세션 */
+/* html {display: flex;justify-content: center;align-items: center;} */
 /* contact video */
 #contactVideo {
   position: absolute;
@@ -928,265 +1195,4 @@ footer ul li a:active {
   bottom: 0vh;
   right: 0;
   font-size: 1.5vw;
-}
-
-/* ! Roadmap 세션 */
-#content4 {
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-}
-.content4_top {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  height: 20vh;
-}
-#label_year {
-  width: 100%;
-  height: 13vh;
-  font-size: 2.5vw;
-  font-family: "Alfa Slab One", cursive;
-  animation-name: label_year_ani;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  -webkit-text-stroke: 0.1vw deepskyblue;
-  font-weight: bold;
-  margin-bottom: 0.5vh;
-}
-@keyframes label_year_ani {
-  0% {
-    text-shadow: 0 0 0vw deepskyblue;
-    transform: scale(0.9, 0.9);
-  }
-  50% {
-    text-shadow: 0 0 3vw deepskyblue;
-    transform: scale(1, 1);
-  }
-  100% {
-    text-shadow: 0 0 0vw deepskyblue;
-    transform: scale(0.9, 0.9);
-  }
-}
-#year {
-  margin-top: 2vh;
-  width: 30vw;
-  z-index: 98;
-}
-.slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  background: skyblue;
-  border: 2px solid white;
-  outline: none;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-  opacity: 0.5;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 2vw;
-  height: 2vw;
-  background: deepskyblue;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 2vw;
-  height: 2vw;
-  background: deepskyblue;
-  cursor: pointer;
-}
-.content4_bottom {
-  z-index: 0;
-  /* 추후 width, height바꿈 */
-  width: 99.5%;
-  height: 57vh;
-  position: absolute;
-  top: 20vh;
-  left: 0;
-  display: none;
-}
-#bottom_main {
-  display: block;
-}
-.leftImg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 37%;
-  height: 100%;
-  border-radius: 20%;
-  border: 2px solid white;
-}
-.centerDiv {
-  position: absolute;
-  top: 0;
-  margin: 5px;
-  left: 37.5%;
-  width: 24%;
-  height: 96%;
-  text-align: center;
-  border-radius: 20%;
-  box-shadow: 0 0 3vh white;
-  transition-duration: 1s;
-  border: 2px solid white;
-}
-.centerDiv Div:first-of-type {
-  color: skyblue;
-  margin-top: 5vh;
-  margin-bottom: 2vh;
-  font-size: 5vw;
-  font-family: "Black Han Sans", sans-serif;
-  -webkit-text-stroke: 0.1vw deepskyblue;
-  text-decoration: underline;
-}
-.centerDiv Div:last-of-type {
-  position: absolute;
-  font-size: 1.7vw;
-  top: 19vh;
-  left: 0;
-  width: 24vw;
-  height: 25vh;
-  line-height: 4vh;
-  text-shadow: 0 0 1vw skyblue;
-  font-family: "Black Han Sans", sans-serif;
-  -webkit-text-stroke: 0.1vw skyblue;
-}
-
-.rightImg {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 37%;
-  height: 100%;
-  border-radius: 20%;
-  border: 2px solid white;
-}
-
-/* ! 세션3 */
-#content3 {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
-  font-family: consolas;
-}
-.container {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.container .boxx {
-  position: relative;
-  width: 20vw;
-  height: 70vh;
-  box-sizing: border-box;
-  overflow: hidden;
-  margin: 0;
-  border: 3px solid white;
-  animation-name: boxx;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes boxx {
-  0%,
-  100% {
-    box-shadow: 0px 0px 0px white;
-  }
-  50% {
-    box-shadow: 0px 0px 2vw white;
-  }
-}
-.container .boxx .imgBx {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  clip-path: circle(800px at center 8vw);
-  transition: 0.5s;
-  transition-delay: 0.5s;
-}
-.container .boxx:hover .imgBx {
-  clip-path: circle(6vw at center 8vw);
-  transition-delay: 0s;
-}
-.container .boxx .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.container .boxx .content {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 55%;
-  box-sizing: border-box;
-  text-align: center;
-}
-.container .boxx .content h2 {
-  margin: 0;
-  padding: 0;
-}
-.container .boxx .content a {
-  text-decoration: none;
-  background: #000;
-  color: #fff;
-  display: inline-block;
-}
-.container .boxx .content h2 {
-  opacity: 0;
-  transition: 0.5s;
-  transform: translateY(20px);
-  font-size: 3vw;
-  -webkit-text-stroke: 0.15vw red;
-  text-shadow: 0 0 1vw red;
-  text-decoration: underline;
-}
-.container .boxx .content p,
-.container .boxx .content a {
-  opacity: 0;
-  transition: 0.5s;
-  transform: translateY(20px);
-  font-size: 1.5vw;
-}
-.container .boxx .content a {
-  color: red;
-  border: 0.3vw solid red;
-  border-radius: 10%;
-}
-.container .boxx:hover .content h2 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.5s;
-}
-.container .boxx:hover .content p {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.7s;
-}
-.container .boxx:hover .content a {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.9s;
 }
