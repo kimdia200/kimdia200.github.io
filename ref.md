@@ -13,3 +13,5 @@
 6 : [Failed to load resource: the server responded with a status of 404](https://aneok.tistory.com/99)
 
 7 : [BackGround Music](https://www.bensound.com/royalty-free-music/track/dubstep)
+
+8 : [Git LFS](https://newsight.tistory.com/330)
