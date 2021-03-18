@@ -1,9 +1,0 @@
-
-css Effect
-
-1 : https://www.youtube.com/watch?v=ccO2B40zkv4
-2 : https://www.youtube.com/watch?v=zB07dcKX9FA
-3 : https://www.youtube.com/watch?v=ajZjivqBdcY
-4 : https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage
-5 : https://aneok.tistory.com/99
-6 : https://www.youtube.com/watch?v=3_fIExAuUY8

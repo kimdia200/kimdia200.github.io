@@ -1,0 +1,6 @@
+readme_img/contact.gif filter=lfs diff=lfs merge=lfs -text
+readme_img/interests.gif filter=lfs diff=lfs merge=lfs -text
+readme_img/introduction.gif filter=lfs diff=lfs merge=lfs -text
+readme_img/main.gif filter=lfs diff=lfs merge=lfs -text
+readme_img/roadmap.gif filter=lfs diff=lfs merge=lfs -text
+readme_img/signin.gif filter=lfs diff=lfs merge=lfs -text

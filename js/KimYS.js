@@ -78,8 +78,10 @@ var li3 = function () {
         "html {display: flex;justify-content: center;align-items: center; background: black; color:white} " +
         "#member_list { border: 1px solid white;border-collapse: collapse;margin: 10px 0; text-align: center;}" +
         " #member_list th, #member_list td {border: 1px solid white;padding: 5px;}" +
+        "h1 { color:white; }" +
         "</style>"
     );
+  $new.find("body").append("<h1>Member List</h1>");
   $new.find("body").append('<table id="member_list"></table>');
 
   // localStorage.entries || []
