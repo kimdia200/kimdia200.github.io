@@ -5,7 +5,7 @@
 - KH정보 교육원의 웹 개발자 양성과정중 개인 프로젝트로 HTML과 CSS, JS, JQuery의 개념정립을 목표로 프로젝트를 진행함
 - (youtube 동영상)
 
-[![Watch the video](./ReadMe_img/youtube.png)](https://youtu.be/4bTAfexNX58)
+[![Watch the video](./ReadMe/youtube.png)](https://youtu.be/4bTAfexNX58)
 
 ---
 
@@ -33,33 +33,33 @@
 
 ## 4. 레이아웃
 
-## ![](./ReadMe_img/Layout_Structure.png)
+## ![](./ReadMe/Layout_Structure.png)
 
 ## 5. 각 세션별 이미지
 
 ## 1)Main 세션
 
-![](./ReadMe_img/main.gif)
+![](./ReadMe/main.gif)
 
 ## 2)Introduction 세션
 
-![](./ReadMe_img/Introduction.gif)
+![](./ReadMe/Introduction.gif)
 
 ## 3)Interests 세션
 
-![](./ReadMe_img/Interests.gif)
+![](./ReadMe/Interests.gif)
 
 ## 4)Roadmap 세션
 
-![](./ReadMe_img/Roadmap.gif)
+![](./ReadMe/Roadmap.gif)
 
 ## 5)Contact 세션
 
-![](./ReadMe_img/Contact.gif)
+![](./ReadMe/Contact.gif)
 
 ## 6)로그인 세션
 
-![](./ReadMe_img/SignIn.gif)
+![](./ReadMe/SignIn.gif)
 
 ---
 
