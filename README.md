@@ -3,6 +3,9 @@
 ## 1. 개요
 
 - KH정보 교육원의 웹 개발자 양성과정중 개인 프로젝트로 HTML과 CSS, JS, JQuery의 개념정립을 목표로 프로젝트를 진행함
+- (youtube 동영상)
+
+[![Watch the video](./ReadMe_img/youtube.png)](https://youtu.be/4bTAfexNX58)
 
 ---
 
