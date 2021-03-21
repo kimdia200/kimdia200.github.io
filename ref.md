@@ -15,3 +15,5 @@
 7 : [BackGround Music](https://www.bensound.com/royalty-free-music/track/dubstep)
 
 8 : [Git LFS](https://newsight.tistory.com/330)
+
+9 : [BGM Audio Autoplay Error in chrome](https://doolyit.tistory.com/169)

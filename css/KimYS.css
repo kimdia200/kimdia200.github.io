@@ -1201,8 +1201,8 @@ footer ul li a:active {
 }
 
 audio {
-  width: 0;
-  height: 0;
+  width: 20vw;
+  height: 2vw;
   margin: 0;
   padding: 0;
 }
